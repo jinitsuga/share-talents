@@ -9,7 +9,9 @@ const Tooltip: FC<Props> = ({ text, shown }) => {
   return (
     <div
       className={
-        !shown ? "hidden" : "flex items-center justify-center  w-36 h-32 "
+        !shown
+          ? "hidden"
+          : "flex items-center justify-center  w-40 h-32 text-center text-teal-200 text-lg mt-6"
       }
     >
       <p>{text}</p>

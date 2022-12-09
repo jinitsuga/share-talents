@@ -13,7 +13,7 @@ interface Props {}
 
 const Choose: FC = () => {
   return (
-    <div className="flex flex-row items-center justify-center mt-10 ">
+    <div className="h-80 flex items-center justify-center mt-10 ">
       <Option
         text="Create talents set"
         tooltip="Make a new set of talents from scratch"
