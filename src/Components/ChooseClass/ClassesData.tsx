@@ -5,19 +5,22 @@ export const classesData = [
   {
     name: "Warrior",
     icon: "",
-    color: "warrior",
-    text: "slate-900",
+    color: "bg-warrior",
+    text: "text-slate-900",
+    key: 1,
   },
   {
     name: "Warlock",
     icon: "",
-    color: "warlock",
-    text: "slate-900",
+    color: "bg-warlock",
+    text: "text-slate-900",
+    key: 2,
   },
   {
     name: "Monk",
     icon: "",
-    color: "monk",
-    text: "slate-900",
+    color: "bg-monk",
+    text: "text-slate-900",
+    key: 3,
   },
 ];
