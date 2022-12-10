@@ -19,7 +19,7 @@ const ChoosePath: FC = () => {
         tooltip="Make a new set of talents from scratch"
       ></Option>
       <Option
-        text="View/Edit an existing set"
+        text="View or Edit an existing set"
         tooltip="Import an existing set to browse, or edit it into a new one"
       ></Option>
     </div>

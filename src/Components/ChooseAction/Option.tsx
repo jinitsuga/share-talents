@@ -22,7 +22,7 @@ const Option: FC<Props> = ({ text, tooltip }) => {
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         className="text-slate-200 bg-slate-900 border mr-4 w-48 h-32 rounded border-transparent text-lg p-1 self-end
-         hover:text-teal-200 hover:scale-125 active:bg-slate-300 active:text-slate-900"
+         hover:text-teal-100 hover:scale-125 active:bg-slate-300 active:text-slate-900"
       >
         {text}
       </button>
