@@ -23,6 +23,9 @@ module.exports = {
       width: {
         classContainer: "600px",
       },
+      scale: {
+        115: "1.15",
+      },
     },
   },
   plugins: [],
