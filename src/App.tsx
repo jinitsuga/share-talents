@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Choose } from "./Components/ChooseAction/Choose";
+import { ChoosePath } from "./Components/ChooseAction/Choose";
 import "./App.css";
 
 function App() {
   return (
     <div>
-      <Choose />
+      <ChoosePath />
     </div>
   );
 }

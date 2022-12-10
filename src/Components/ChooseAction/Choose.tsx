@@ -11,7 +11,7 @@ import { Option } from "./Option";
 
 interface Props {}
 
-const Choose: FC = () => {
+const ChoosePath: FC = () => {
   return (
     <div className="h-80 flex items-center justify-center mt-10 ">
       <Option
@@ -26,4 +26,4 @@ const Choose: FC = () => {
   );
 };
 
-export { Choose };
+export { ChoosePath };
