@@ -1,16 +1,14 @@
 import { useState, FC, EventHandler } from "react";
 import Tooltip from "../Tooltip/Tooltip";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
   tooltip: string;
   text: string;
+  onClick: any; // useNavigate from r-router-dom
 }
 
-const Option: FC<Props> = ({ text, tooltip }) => {
+const Option: FC<Props> = ({ text, tooltip, onClick }) => {
   const [tooltipShown, setTooltipShown] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleEnter = () => {
     setTooltipShown(true);
@@ -22,9 +20,7 @@ const Option: FC<Props> = ({ text, tooltip }) => {
   return (
     <div className="h-80 flex flex-col items-center justify-start m-5">
       <button
-        onClick={(e) => {
-          navigate("/create-build");
-        }}
+        onClick={onClick}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         className="text-slate-200 bg-slate-900 border mr-4 w-48 h-32 rounded border-transparent text-lg p-1 self-end
