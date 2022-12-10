@@ -2,16 +2,6 @@ import { FC } from "react";
 import { Option } from "./Option";
 import { useNavigate } from "react-router-dom";
 
-//  Create talents set
-// </button>
-// <Tooltip text="Make a new set of talents from scratch" />
-
-// View/Edit an existing set
-// </button>
-// <Tooltip text="import an existing set to browse, or edit it into a new one" />
-
-interface Props {}
-
 const ChoosePath: FC = () => {
   const navigate = useNavigate();
 
@@ -28,7 +18,7 @@ const ChoosePath: FC = () => {
         onClick={() => {
           navigate("/create-build");
         }}
-        text="View or Edit an existing set"
+        text="Import a set"
         tooltip="Import an existing set to browse, or edit it into a new one"
       ></Option>
     </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ChoosePath } from "./Components/ChooseAction/ChoosePath";
 import { ChooseClass } from "./Components/ChooseClass/ChooseClass";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -13,6 +12,7 @@ const router = createBrowserRouter([
     children: [{ path: "/create-build/new", element: <ChooseClass /> }],
   },
 ]);
+
 function App() {
   return (
     <div>
