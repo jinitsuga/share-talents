@@ -1,7 +1,12 @@
-export const classesData = [
-  // text
-  // teal-100
-  // slate-900
+interface Character {
+  name: string;
+  icon: string;
+  color: string;
+  text: string;
+  key: number;
+}
+
+const classesData: Array<Character> = [
   {
     name: "Warrior",
     icon: "",
@@ -94,3 +99,5 @@ export const classesData = [
     key: 13,
   },
 ];
+
+export { classesData };
