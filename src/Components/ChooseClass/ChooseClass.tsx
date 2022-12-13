@@ -2,12 +2,24 @@ import React, { FC } from "react";
 import { classesData, Character } from "./ClassesData";
 import { Class } from "./Class";
 import { ClassForm } from "./ClassForm";
+import { useNavigate } from "react-router-dom";
 
 // Bake input + comment component into this one to maintain the same route
 
 const ChooseClass: FC = () => {
   const [buildData, setBuildData] = React.useState({ class: "" });
   const [classesShown, setClassesShown] = React.useState(true);
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    if (!classesShown) {
+      setClassesShown(true);
+    }
+    if (classesShown) {
+      navigate("/");
+    }
+  };
 
   const toggleClasses = () => {
     setClassesShown(!classesShown);
@@ -33,7 +45,10 @@ const ChooseClass: FC = () => {
 
   return (
     <div className={` w-screen flex flex-col justify-center items-center`}>
-      <div className="self-start ml-20 text-2xl text-teal-100 bg-slate-900 rounded p-2">
+      <div
+        onClick={handleBack}
+        className="self-start ml-20 mt-10 text-2xl text-teal-100 bg-slate-900 rounded p-2 hover:cursor-pointer hover:bg-teal-100 hover:text-slate-900"
+      >
         ↩ back
       </div>
       <div
@@ -48,7 +63,7 @@ const ChooseClass: FC = () => {
           {classBlocks}
         </div>
       </div>
-      <ClassForm character={buildData.class} />
+      <ClassForm character={buildData.class} shown={classesShown} />
     </div>
   );
 };

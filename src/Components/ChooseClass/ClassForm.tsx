@@ -2,11 +2,16 @@ import React, { FC } from "react";
 
 interface Props {
   character: string;
+  shown: boolean;
 }
 
-const ClassForm: FC<Props> = ({ character }) => {
+const ClassForm: FC<Props> = ({ character, shown }) => {
   return (
-    <form className="flex flex-col items-center justify-center m-10">
+    <form
+      className={`${
+        shown ? "hidden" : "flex"
+      }  flex-col items-center justify-center m-10`}
+    >
       <h3 className="text-teal-100 bg-slate-900 p-4 text-2xl m-4">
         Creating a {character} build.
       </h3>
@@ -27,9 +32,16 @@ const ClassForm: FC<Props> = ({ character }) => {
           spellCheck={false}
           className="m-4 rounded focus:outline-none focus:ring focus:ring-slate-900 p-2 text-base"
           maxLength={300}
-          placeholder="Share details about the build"
+          placeholder="Include some details about the build"
         ></textarea>
       </label>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+        }}
+      >
+        Save build
+      </button>
     </form>
   );
 };
