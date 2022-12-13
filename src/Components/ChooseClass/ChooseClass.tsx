@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { classesData } from "./ClassesData";
+import { classesData, Character } from "./ClassesData";
 import { Class } from "./Class";
 
 console.log("chooseclassCOmpopnent");
@@ -8,9 +8,28 @@ console.log("chooseclassCOmpopnent");
 
 const ChooseClass: FC = () => {
   const [buildData, setBuildData] = React.useState({});
+  const [classesShown, setClassesShown] = React.useState(true);
 
-  const classBlocks = classesData.map((classData) => {
-    return <Class {...classData} />;
+  const toggleClasses = () => {
+    setClassesShown(!classesShown);
+  };
+
+  const handleClass = (e: any) => {
+    setBuildData((oldData) => {
+      return { ...oldData, class: e.target.textContent };
+    });
+  };
+
+  const classBlocks = classesData.map((classData: Character) => {
+    return (
+      <Class
+        {...classData}
+        onClick={(e: any) => {
+          handleClass(e);
+          toggleClasses();
+        }}
+      />
+    );
   });
 
   return (
@@ -24,5 +43,5 @@ const ChooseClass: FC = () => {
     </div>
   );
 };
-
+// bru
 export { ChooseClass };

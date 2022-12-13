@@ -1,9 +1,10 @@
-interface Character {
+export interface Character {
   name: string;
   icon: string;
   color: string;
   text: string;
   key: number;
+  value: string;
 }
 
 const classesData: Array<Character> = [
@@ -13,6 +14,7 @@ const classesData: Array<Character> = [
     color: "bg-warrior",
     text: "text-slate-900",
     key: 1,
+    value: "warrior",
   },
   {
     name: "Warlock",
@@ -20,6 +22,7 @@ const classesData: Array<Character> = [
     color: "bg-warlock",
     text: "text-slate-900",
     key: 2,
+    value: "warlock",
   },
   {
     name: "Monk",
@@ -27,6 +30,7 @@ const classesData: Array<Character> = [
     color: "bg-monk",
     text: "text-slate-900",
     key: 3,
+    value: "monk",
   },
   {
     name: "Shaman",
@@ -34,6 +38,7 @@ const classesData: Array<Character> = [
     color: "bg-shaman",
     text: "text-white",
     key: 4,
+    value: "shaman",
   },
   {
     name: "Rogue",
@@ -41,6 +46,7 @@ const classesData: Array<Character> = [
     color: "bg-rogue",
     text: "text-slate-900",
     key: 5,
+    value: "rogue",
   },
   {
     name: "Priest",
@@ -48,6 +54,7 @@ const classesData: Array<Character> = [
     color: "bg-priest",
     text: "text-slate-900",
     key: 6,
+    value: "priest",
   },
   {
     name: "Demon Hunter",
@@ -55,6 +62,7 @@ const classesData: Array<Character> = [
     color: "bg-dh",
     text: "text-white",
     key: 7,
+    value: "dh",
   },
   {
     name: "Druid",
@@ -62,6 +70,7 @@ const classesData: Array<Character> = [
     color: "bg-druid",
     text: "text-slate-900",
     key: 8,
+    value: "druid",
   },
   {
     name: "Hunter",
@@ -69,6 +78,7 @@ const classesData: Array<Character> = [
     color: "bg-hunter",
     text: "text-slate-900",
     key: 9,
+    value: "hunter",
   },
   {
     name: "Mage",
@@ -76,6 +86,7 @@ const classesData: Array<Character> = [
     color: "bg-mage",
     text: "text-slate-900",
     key: 10,
+    value: "mage",
   },
   {
     name: "Death Knight",
@@ -83,6 +94,7 @@ const classesData: Array<Character> = [
     color: "bg-dk",
     text: "text-white",
     key: 11,
+    value: "dk",
   },
   {
     name: "Paladin",
@@ -90,6 +102,7 @@ const classesData: Array<Character> = [
     color: "bg-paladin",
     text: "text-slate-900",
     key: 12,
+    value: "paladin",
   },
   {
     name: "Evoker",
@@ -97,6 +110,7 @@ const classesData: Array<Character> = [
     color: "bg-evoker",
     text: "text-slate-900",
     key: 13,
+    value: "evoker",
   },
 ];
 
