@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 
 interface Props {
-    class: string;
+  character: string;
 }
 
-const ClassForm: FC<Props> = ({ class }) => {
+const ClassForm: FC<Props> = ({ character }) => {
   return (
     <form>
+      <span>Creating a {character} build.</span>
       <label htmlFor="string">
         Paste your string!
         <input
@@ -15,7 +16,9 @@ const ClassForm: FC<Props> = ({ class }) => {
         ></input>
       </label>
       <label htmlFor="build-details">
-        <textarea> </textarea>
+        <textarea maxLength={300} placeholder="Share details about the build">
+          {" "}
+        </textarea>
       </label>
     </form>
   );
