@@ -16,9 +16,10 @@ const ClassForm: FC<Props> = ({ character }) => {
         ></input>
       </label>
       <label htmlFor="build-details">
-        <textarea maxLength={300} placeholder="Share details about the build">
-          {" "}
-        </textarea>
+        <textarea
+          maxLength={300}
+          placeholder="Share details about the build"
+        ></textarea>
       </label>
     </form>
   );
