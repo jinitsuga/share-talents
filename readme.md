@@ -11,7 +11,7 @@ The idea behind this project is to bring a tool to my Warcraft friends where the
 Throughout this project I intend to learn and practice:
 -Typescript --> everything points to TS being the future of any Javascript based tech, plus it's starting to feel really nice and convenient to use as I slowly get more and more into it
 
--TailwindCSS --> Earlier I've debated between Tailwind and styled-components for styling, and having already done two projects using styled-components, it is time for Tailwind! Since I'll be taking it slow while also incorporating TS, it seemed like a good opportunity to also being my Tailwind journey.
+-TailwindCSS --> Earlier I've debated between Tailwind and styled-components for styling, and having already done two projects using styled-components, it is time for Tailwind! Since I'll be taking it slow while also incorporating TS, it seemed like a good opportunity to also begin my Tailwind journey.
 
 -Vite: been trying to step away from create-react-app for a multitude of reasons, so this is the first project that I'll be starting with Vite! It seems super fast and covenient so far, and it's been an extremely easy install.
 

@@ -3,6 +3,8 @@ import React, { FC } from "react";
 interface Props {
   character: string;
   shown: boolean;
+  stringHandler: any;
+  detailsHandler: any;
 }
 
 const ClassForm: FC<Props> = ({ character, shown }) => {
