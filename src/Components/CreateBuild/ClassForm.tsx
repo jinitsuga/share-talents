@@ -59,7 +59,7 @@ const ClassForm: FC<Props> = ({
         ></textarea>
       </label>
       <button
-        className="bg-teal-100 text-slate-900 p-4 rounded text-xl hover:bg-slate-900 hover:text-teal-100"
+        className="bg-teal-100 text-slate-900 p-4 rounded text-xl hover:bg-slate-900 hover:text-teal-100 active:bg-cyan-600"
         onClick={(e) => {
           e.preventDefault();
         }}

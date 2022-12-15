@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChoosePath } from "./Components/ChooseAction/ChoosePath";
-import { ChooseClass } from "./Components/ChooseClass/ChooseClass";
+import { ChooseClass } from "./Components/CreateBuild/CreateBuild";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
@@ -9,7 +9,6 @@ const router = createBrowserRouter([
   {
     path: "/create-build",
     element: <ChooseClass />,
-    children: [{ path: "/create-build/new", element: <ChooseClass /> }],
   },
 ]);
 
