@@ -14,11 +14,11 @@ const ChooseClass: FC = () => {
   });
   const [classesShown, setClassesShown] = React.useState(true);
 
+  console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
+
   const [errorMsgs, setErrorMsgs] = React.useState("");
 
   const navigate = useNavigate();
-
-  console.log(buildData);
 
   const handleInput = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,6 +39,9 @@ const ChooseClass: FC = () => {
     }
     if (!localStorage.getItem("builds")) {
       localStorage.setItem("builds", JSON.stringify([]));
+    } else {
+      const oldBuilds = JSON.parse(localStorage.getItem("builds") || "[]");
+      localStorage.setItem("builds", JSON.stringify([...oldBuilds, buildData]));
     }
   };
 
