@@ -7,16 +7,26 @@ import { useNavigate } from "react-router-dom";
 // Bake input + comment component into this one to maintain the same route
 
 const ChooseClass: FC = () => {
-  const [buildData, setBuildData] = React.useState({
+  interface Build {
+    class: string;
+    link: string;
+    details: string;
+  }
+
+  const [buildData, setBuildData] = React.useState<Build>({
     class: "",
     link: "",
     details: "",
   });
   const [classesShown, setClassesShown] = React.useState(true);
 
-  console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
+  const [builds, setBuilds] = React.useState<Array<Build>>([]);
 
   const [errorMsgs, setErrorMsgs] = React.useState("");
+
+  // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
+  console.log(builds);
+  localStorage.setItem("builds", JSON.stringify(builds));
 
   const navigate = useNavigate();
 
@@ -33,15 +43,21 @@ const ChooseClass: FC = () => {
       setErrorMsgs("Make sure you have a class selected!");
       return;
     }
+
     if (buildData.link.length < 10) {
       setErrorMsgs("Make sure your link is valid!");
       return;
     }
+
     if (!localStorage.getItem("builds")) {
-      localStorage.setItem("builds", JSON.stringify([]));
+      localStorage.setItem("builds", JSON.stringify([buildData]));
+
+      setBuilds((oldbuilds) => {
+        return { ...oldbuilds, buildData };
+      });
     } else {
-      const oldBuilds = JSON.parse(localStorage.getItem("builds") || "[]");
-      localStorage.setItem("builds", JSON.stringify([...oldBuilds, buildData]));
+      // const oldBuilds = JSON.parse(localStorage.getItem("builds") || "[]");
+      setBuilds([...builds, buildData]);
     }
   };
 
