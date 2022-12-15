@@ -6,18 +6,29 @@ import { useNavigate } from "react-router-dom";
 
 // Bake input + comment component into this one to maintain the same route
 
-const ChooseClass: FC = () => {
-  interface Build {
-    class: string;
-    link: string;
-    details: string;
-  }
+interface Build {
+  class: string;
+  link: string;
+  details: string;
+}
+// interface Props {
+//   savedBuilds?: Array<Build>;
+// }
 
+const CreateBuild: FC = ({}) => {
   const [buildData, setBuildData] = React.useState<Build>({
     class: "",
     link: "",
     details: "",
   });
+
+  React.useEffect(() => {
+    if (localStorage.getItem("builds")) {
+      setBuilds(JSON.parse(localStorage.getItem("builds") || "[]"));
+      console.log("builds set");
+    }
+  }, []);
+
   const [classesShown, setClassesShown] = React.useState(true);
 
   const [builds, setBuilds] = React.useState<Array<Build>>([]);
@@ -25,8 +36,10 @@ const ChooseClass: FC = () => {
   const [errorMsgs, setErrorMsgs] = React.useState("");
 
   // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
+
   console.log(builds);
-  localStorage.setItem("builds", JSON.stringify(builds));
+
+  builds.length ? localStorage.setItem("builds", JSON.stringify(builds)) : "";
 
   const navigate = useNavigate();
 
@@ -128,4 +141,4 @@ const ChooseClass: FC = () => {
   );
 };
 // bru
-export { ChooseClass };
+export { CreateBuild };
