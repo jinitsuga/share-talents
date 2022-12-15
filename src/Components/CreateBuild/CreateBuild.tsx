@@ -14,6 +14,8 @@ const ChooseClass: FC = () => {
   });
   const [classesShown, setClassesShown] = React.useState(true);
 
+  const [errorMsgs, setErrorMsgs] = React.useState("");
+
   const navigate = useNavigate();
 
   console.log(buildData);
@@ -24,6 +26,20 @@ const ChooseClass: FC = () => {
     setBuildData((oldData) => {
       return { ...oldData, [e.target.name]: e.target.value };
     });
+  };
+
+  const saveBuild = () => {
+    if (buildData.class.length < 3) {
+      setErrorMsgs("Make sure you have a class selected!");
+      return;
+    }
+    if (buildData.link.length < 10) {
+      setErrorMsgs("Make sure your link is valid!");
+      return;
+    }
+    if (!localStorage.getItem("builds")) {
+      localStorage.setItem("builds", JSON.stringify([]));
+    }
   };
 
   const handleBack = () => {
@@ -81,11 +97,13 @@ const ChooseClass: FC = () => {
       </div>
 
       <ClassForm
+        saveBuild={saveBuild}
         character={buildData.class}
         shown={classesShown}
         inputHandler={handleInput}
         linkValue={buildData.link}
         detailsValue={buildData.details}
+        error={errorMsgs}
       />
     </div>
   );

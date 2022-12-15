@@ -6,6 +6,8 @@ interface Props {
   inputHandler: Function;
   linkValue: string;
   detailsValue: string;
+  error: string;
+  saveBuild: Function;
 }
 
 const ClassForm: FC<Props> = ({
@@ -14,6 +16,8 @@ const ClassForm: FC<Props> = ({
   inputHandler,
   linkValue,
   detailsValue,
+  error,
+  saveBuild,
 }) => {
   return (
     <form
@@ -40,6 +44,13 @@ const ClassForm: FC<Props> = ({
           type="text"
           placeholder="Paste your string from the clipboard..."
         ></input>
+        <span
+          className={`${
+            error.length > 1 ? "block" : "hidden"
+          } text-red-100 text-xl bg-slate-900 p-2 border-red-600 border rounded`}
+        >
+          {error}
+        </span>
       </label>
       <label
         htmlFor="build-details"
@@ -62,6 +73,7 @@ const ClassForm: FC<Props> = ({
         className="bg-teal-100 text-slate-900 p-4 rounded text-xl hover:bg-slate-900 hover:text-teal-100 active:bg-cyan-600"
         onClick={(e) => {
           e.preventDefault();
+          saveBuild();
         }}
       >
         Save build
