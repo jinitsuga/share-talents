@@ -4,7 +4,7 @@ In order to run the project locally, clone the repo, use the terminal to cd into
 
 #### The idea
 
-The idea behind this project is to bring a tool to my Warcraft friends where they'll be able to save as many talent builds as they want, since in-game they're only limited to 10 loadouts. After saving a set of however many talent builds you want, you can then generate a unique url that you'll link to that list of builds, enabling the user to keep track, share, and edit their sets of builds this way. In "edit mode" it'll just copy that set of builds and make a new set on top of that one, so that the old one isn't overwritten.
+The idea behind this project is to bring a tool to my Warcraft friends where they'll be able to save as many talent builds as they want, since in-game they're only limited to 10 loadouts. After saving a set of however many talent builds you want, you can then generate a unique url that you'll link to that list of builds, enabling the user to keep track, share, and edit their sets of builds this way.
 
 ### The tools
 

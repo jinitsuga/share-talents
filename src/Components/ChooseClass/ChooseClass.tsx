@@ -1,20 +1,35 @@
-import React, { FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 import { classesData, Character } from "./ClassesData";
 import { Class } from "./Class";
-import { ClassForm } from "./ClassForm";
+import ClassForm from "./ClassForm";
 import { useNavigate } from "react-router-dom";
 
 // Bake input + comment component into this one to maintain the same route
 
 const ChooseClass: FC = () => {
-  const [buildData, setBuildData] = React.useState({ class: "" });
+  const [buildData, setBuildData] = React.useState({
+    class: "",
+    link: "",
+    details: "",
+  });
   const [classesShown, setClassesShown] = React.useState(true);
 
   const navigate = useNavigate();
 
+  console.log(buildData);
+
+  const handleInput = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setBuildData((oldData) => {
+      return { ...oldData, [e.target.name]: e.target.value };
+    });
+  };
+
   const handleBack = () => {
     if (!classesShown) {
       setClassesShown(true);
+      setBuildData({ class: "", link: "", details: "" });
     }
     if (classesShown) {
       navigate("/");
@@ -63,7 +78,14 @@ const ChooseClass: FC = () => {
           {classBlocks}
         </div>
       </div>
-      <ClassForm character={buildData.class} shown={classesShown} />
+
+      <ClassForm
+        character={buildData.class}
+        shown={classesShown}
+        inputHandler={handleInput}
+        linkValue={buildData.link}
+        detailsValue={buildData.details}
+      />
     </div>
   );
 };

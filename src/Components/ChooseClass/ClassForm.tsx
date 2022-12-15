@@ -3,11 +3,18 @@ import React, { FC } from "react";
 interface Props {
   character: string;
   shown: boolean;
-  stringHandler: any;
-  detailsHandler: any;
+  inputHandler: Function;
+  linkValue: string;
+  detailsValue: string;
 }
 
-const ClassForm: FC<Props> = ({ character, shown }) => {
+const ClassForm: FC<Props> = ({
+  character,
+  shown,
+  inputHandler,
+  linkValue,
+  detailsValue,
+}) => {
   return (
     <form
       className={`${
@@ -24,20 +31,35 @@ const ClassForm: FC<Props> = ({ character, shown }) => {
         Paste your string (text that holds your build) from in-game or other
         sources
         <input
+          value={linkValue}
+          name="link"
+          onChange={(e) => {
+            inputHandler(e);
+          }}
           className="m-4 rounded focus:outline-none focus:ring focus:ring-slate-900 p-2 text-base text-slate-900"
           type="text"
           placeholder="Paste your string from the clipboard..."
         ></input>
       </label>
-      <label htmlFor="build-details">
+      <label
+        htmlFor="build-details"
+        className="m-2 flex flex-col items-center justify-center w-80 text-teal-100"
+      >
+        Build details (optional)
         <textarea
+          value={detailsValue}
+          name="details"
+          onChange={(e) => {
+            inputHandler(e);
+          }}
           spellCheck={false}
-          className="m-4 rounded focus:outline-none focus:ring focus:ring-slate-900 p-2 text-base"
+          className=" text-slate-900 m-4 rounded focus:outline-none focus:ring focus:ring-slate-900 p-2 text-base"
           maxLength={300}
           placeholder="Include some details about the build"
         ></textarea>
       </label>
       <button
+        className="bg-teal-100 text-slate-900 p-4 rounded text-xl hover:bg-slate-900 hover:text-teal-100"
         onClick={(e) => {
           e.preventDefault();
         }}
@@ -48,4 +70,4 @@ const ClassForm: FC<Props> = ({ character, shown }) => {
   );
 };
 
-export { ClassForm };
+export default ClassForm;
