@@ -3,7 +3,7 @@ import { classesData, Character } from "./ClassesData";
 import { Class } from "./Class";
 import ClassForm from "./ClassForm";
 import { useNavigate } from "react-router-dom";
-
+import { SideBuilds } from "../SideBuilds/SideBuilds";
 // Bake input + comment component into this one to maintain the same route
 
 export interface Build {
