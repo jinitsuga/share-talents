@@ -3,6 +3,7 @@ import { Build } from "../CreateBuild/CreateBuild";
 
 interface Props {
   builds: Array<Build>;
+  delete: Function;
 }
 
 export const Builds = ({}) => {

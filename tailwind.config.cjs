@@ -22,6 +22,8 @@ module.exports = {
       },
       width: {
         classContainer: "600px",
+        classContainerSmall: "450px",
+        phoneSize: "375px",
       },
       scale: {
         115: "1.15",

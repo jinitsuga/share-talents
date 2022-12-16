@@ -123,7 +123,7 @@ const CreateBuild: FC = ({}) => {
         <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded">
           Select a class
         </h3>
-        <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-auto">
+        <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-auto max-xl:w-classContainerSmall pb-4">
           {classBlocks}
         </div>
       </div>
