@@ -107,36 +107,41 @@ const CreateBuild: FC = ({}) => {
   });
 
   return (
-    <div className={` w-screen flex flex-col justify-center items-center`}>
-      <div
-        onClick={handleBack}
-        className="self-start ml-20 mt-10 text-2xl text-teal-100 bg-slate-900 rounded p-2 hover:cursor-pointer
+    <div className="relative">
+      <div className={` w-screen flex flex-col justify-center items-center`}>
+        <div
+          onClick={handleBack}
+          className="self-start ml-20 mt-10 text-2xl text-teal-100 bg-slate-900 rounded p-2 hover:cursor-pointer
          hover:bg-teal-100 hover:text-slate-900 active:bg-cyan-600"
-      >
-        ↩ back
-      </div>
-      <div
-        className={`${
-          classesShown ? "flex" : "hidden"
-        }  flex-col items-center justify-center mt-20 w-9/12`}
-      >
-        <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded">
-          Select a class
-        </h3>
-        <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-auto max-xl:w-classContainerSmall pb-4">
-          {classBlocks}
+        >
+          ↩ back
         </div>
+        <div
+          className={`${
+            classesShown ? "flex" : "hidden"
+          }  flex-col items-center justify-center mt-20 w-auto -mr-36`}
+        >
+          <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded">
+            Select a class
+          </h3>
+          <div className="flex flex-row">
+            <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-80 max-xl:w-classContainerSmall pb-4">
+              {classBlocks}
+            </div>
+          </div>
+        </div>
+
+        <ClassForm
+          saveBuild={saveBuild}
+          character={buildData.class}
+          shown={classesShown}
+          inputHandler={handleInput}
+          linkValue={buildData.link}
+          detailsValue={buildData.details}
+          error={errorMsgs}
+        />
       </div>
       <SideBuilds builds={builds} />
-      <ClassForm
-        saveBuild={saveBuild}
-        character={buildData.class}
-        shown={classesShown}
-        inputHandler={handleInput}
-        linkValue={buildData.link}
-        detailsValue={buildData.details}
-        error={errorMsgs}
-      />
     </div>
   );
 };

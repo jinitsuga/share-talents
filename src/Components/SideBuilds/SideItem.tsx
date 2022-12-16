@@ -25,17 +25,20 @@ export const SideItem: FC<Props> = ({ build }) => {
   };
 
   return (
-    <div className={`w-80 flex flex-col rounded bg-${background} m-2 p-1`}>
-      <h4 className="text-sm">{build.class} build</h4>
-      <span className="text-xs">qweeEEEEEEEEEEEERRRR444123yyu</span>
-      <span
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        className="text-xs"
-      >
-        + details
-      </span>
+    <div className=" relative flex flex-row">
+      <div className={`w-80 flex flex-col rounded bg-${background} m-2 p-1`}>
+        <h4 className="text-sm">{build.class} build</h4>
+        <span className="text-xs">qweeEEEEEEEEEEEERRRR444123yyu</span>
+        <span
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
+          className="text-xs"
+        >
+          + details
+        </span>
+      </div>
       <Tooltip
+        build="yes"
         text="some random details about the build"
         shown={detailsShown}
       />

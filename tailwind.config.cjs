@@ -25,6 +25,9 @@ module.exports = {
         classContainerSmall: "450px",
         phoneSize: "375px",
       },
+      height: {
+        sideHeight: "750px",
+      },
       scale: {
         115: "1.15",
       },
