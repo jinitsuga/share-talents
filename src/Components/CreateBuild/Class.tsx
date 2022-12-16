@@ -2,7 +2,7 @@ import { FC } from "react";
 
 interface Props {
   name: string;
-  icon: string;
+  icon?: string;
   color: string;
   text: string;
   onClick: any;

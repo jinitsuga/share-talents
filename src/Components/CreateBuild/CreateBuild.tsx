@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 // Bake input + comment component into this one to maintain the same route
 
-interface Build {
+export interface Build {
   class: string;
   link: string;
   details: string;
