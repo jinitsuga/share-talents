@@ -127,7 +127,7 @@ const CreateBuild: FC = ({}) => {
           {classBlocks}
         </div>
       </div>
-
+      <SideBuilds builds={builds} />
       <ClassForm
         saveBuild={saveBuild}
         character={buildData.class}

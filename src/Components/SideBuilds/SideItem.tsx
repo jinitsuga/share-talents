@@ -19,9 +19,9 @@ export const SideItem: FC<Props> = ({ build }) => {
   };
 
   return (
-    <div className={`w-36 flex flex-col rounded bg-${background} `}>
-      <h4>{build.class}</h4>
-      <span>qweeEEEEEEEEEEEERRRR444123yyu</span>
+    <div className={`w-80 flex flex-col rounded bg-${background} m-2 p-1`}>
+      <h4 className="text-sm">{build.class} build</h4>
+      <span className="text-xs">qweeEEEEEEEEEEEERRRR444123yyu</span>
       <Tooltip
         text="some random details about the build"
         shown={detailsShown}
