@@ -42,9 +42,6 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
         <span
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
-          onClick={() => {
-            deleteBuild();
-          }}
           className="text-xs hover:cursor-pointer w-32"
         >
           + details
