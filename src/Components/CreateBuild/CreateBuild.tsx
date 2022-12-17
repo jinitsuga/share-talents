@@ -119,7 +119,7 @@ const CreateBuild: FC = ({}) => {
         <div
           className={`${
             classesShown ? "flex" : "hidden"
-          }  flex-col items-center justify-center mt-20 w-auto -mr-36`}
+          }  flex-col items-center justify-center mt-20 w-auto `}
         >
           <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded">
             Select a class
