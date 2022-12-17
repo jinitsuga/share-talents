@@ -4,11 +4,15 @@ import Tooltip from "../Tooltip/Tooltip";
 
 interface Props {
   build: Build;
+  builds: Array<Build>;
+  setBuilds: Function;
+  id: string;
 }
 
-export const SideItem: FC<Props> = ({ build }) => {
+export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
   const [detailsShown, setDetailsShown] = React.useState(false);
 
+  // Bg-color corrections (tailwind config file)
   let background = build.class.toLowerCase();
   if (build.class == "Death Knight") {
     background = "dk";
@@ -24,6 +28,10 @@ export const SideItem: FC<Props> = ({ build }) => {
     setDetailsShown(false);
   };
 
+  const deleteBuild = () => {
+    console.log(id);
+  };
+
   return (
     <div
       className={` relative flex flex-row bg-${background} p-4 rounded mb-2 `}
@@ -34,6 +42,9 @@ export const SideItem: FC<Props> = ({ build }) => {
         <span
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
+          onClick={() => {
+            deleteBuild();
+          }}
           className="text-xs hover:cursor-pointer w-32"
         >
           + details

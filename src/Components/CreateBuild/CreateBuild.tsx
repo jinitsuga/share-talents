@@ -11,9 +11,6 @@ export interface Build {
   link: string;
   details: string;
 }
-// interface Props {
-//   savedBuilds?: Array<Build>;
-// }
 
 const CreateBuild: FC = ({}) => {
   const [buildData, setBuildData] = React.useState<Build>({

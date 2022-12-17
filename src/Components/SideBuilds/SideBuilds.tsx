@@ -4,12 +4,20 @@ import { SideItem } from "./SideItem";
 
 interface Props {
   builds: Array<Build>;
-  setBuilds: any;
+  setBuilds: Function;
 }
 
-export const SideBuilds: FC<Props> = ({ builds }) => {
-  const buildsList = builds.map((build) => {
-    return <SideItem key={build.link} build={build} />;
+export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
+  const buildsList = builds.map((build, index) => {
+    return (
+      <SideItem
+        builds={builds}
+        setBuilds={setBuilds}
+        id={build.link}
+        build={build}
+        key={index}
+      />
+    );
   });
 
   const saveBuilds = (builds: Array<Build>) => {
@@ -30,6 +38,7 @@ export const SideBuilds: FC<Props> = ({ builds }) => {
       <button
         onClick={() => {
           saveBuilds(builds);
+          setBuilds([]);
         }}
         className="bg-teal-100 text-slate-900 p-3 m-2 rounded hover:bg-slate-900 hover:text-teal-100 hover:border"
       >
