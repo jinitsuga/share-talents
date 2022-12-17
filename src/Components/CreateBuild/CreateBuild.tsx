@@ -66,7 +66,8 @@ const CreateBuild: FC = ({}) => {
       localStorage.setItem("builds", JSON.stringify([buildData]));
 
       setBuilds((oldbuilds) => {
-        return { ...oldbuilds, buildData };
+        const newBuilds = [buildData];
+        return newBuilds;
       });
     } else {
       // const oldBuilds = JSON.parse(localStorage.getItem("builds") || "[]");
@@ -132,6 +133,7 @@ const CreateBuild: FC = ({}) => {
         </div>
 
         <ClassForm
+          toggleClasses={toggleClasses}
           saveBuild={saveBuild}
           character={buildData.class}
           shown={classesShown}
@@ -141,7 +143,7 @@ const CreateBuild: FC = ({}) => {
           error={errorMsgs}
         />
       </div>
-      <SideBuilds builds={builds} />
+      <SideBuilds builds={builds} setBuilds={setBuilds} />
     </div>
   );
 };

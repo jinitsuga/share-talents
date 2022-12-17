@@ -8,6 +8,7 @@ interface Props {
   detailsValue: string;
   error: string;
   saveBuild: Function;
+  toggleClasses: Function;
 }
 
 const ClassForm: FC<Props> = ({
@@ -18,6 +19,7 @@ const ClassForm: FC<Props> = ({
   detailsValue,
   error,
   saveBuild,
+  toggleClasses,
 }) => {
   return (
     <form
@@ -74,6 +76,7 @@ const ClassForm: FC<Props> = ({
         onClick={(e) => {
           e.preventDefault();
           saveBuild();
+          toggleClasses();
         }}
       >
         Save build

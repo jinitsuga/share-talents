@@ -26,7 +26,7 @@ export const SideItem: FC<Props> = ({ build }) => {
 
   return (
     <div
-      className={` relative flex flex-row bg-${background} p-4 rounded m-1 `}
+      className={` relative flex flex-row bg-${background} p-4 rounded mb-2 `}
     >
       <div className={`w-60 flex flex-col rounded bg-${background}  `}>
         <h4 className="text-sm w-32">{build.class} build</h4>
@@ -41,7 +41,7 @@ export const SideItem: FC<Props> = ({ build }) => {
       </div>
       <button
         className="w-10 h-8 text-xs text-slate-900 bg-teal-100 rounded p-1 text-center mt-2 hover:bg-slate-900
-      border hover:text-teal-100 active:bg-cyan-600"
+       border-slate-900 border-2 hover:text-teal-100 active:bg-cyan-600"
       >
         copy
       </button>
