@@ -30,13 +30,15 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
 
   const deleteBuild = () => {
     console.log(id);
+    const thisBuild = builds.filter((build) => build.link !== id);
+    console.log(thisBuild);
   };
 
   return (
     <div
-      className={` relative flex flex-row bg-${background} p-4 rounded mb-2 `}
+      className={` relative flex flex-row bg-${background} p-4 rounded mb-2 hover:border-4 hover:border-teal-100`}
     >
-      <div className={`w-60 flex flex-col rounded bg-${background}  `}>
+      <div className={`w-60 flex flex-col rounded bg-${background} `}>
         <h4 className="text-sm">{build.class} build</h4>
         <span className="text-xs w-32">qweeEEEEEEEEEEEERRRR444123yyu</span>
         <span
@@ -58,7 +60,7 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
           X
         </div>
         <button
-          className="w-10 h-8 text-xs text-slate-900 bg-teal-100 rounded  text-center mt-2 hover:bg-slate-900
+          className="w-10 h-8 text-xs text-slate-900 bg-teal-100 rounded text-center mt-2 hover:bg-slate-900
        border-slate-900 border-2 hover:text-teal-100 active:bg-cyan-600"
         >
           copy
