@@ -76,7 +76,6 @@ const ClassForm: FC<Props> = ({
         onClick={(e) => {
           e.preventDefault();
           saveBuild();
-          toggleClasses();
         }}
       >
         Save build
@@ -85,4 +84,4 @@ const ClassForm: FC<Props> = ({
   );
 };
 
-export default ClassForm;
+export { ClassForm };

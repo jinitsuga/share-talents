@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FC } from "react";
 import { classesData, Character } from "./ClassesData";
 import { Class } from "./Class";
-import ClassForm from "./ClassForm";
+import { ClassForm } from "./ClassForm";
 import { useNavigate } from "react-router-dom";
 import { SideBuilds } from "../SideBuilds/SideBuilds";
-// Bake input + comment component into this one to maintain the same route
+// Bake input + comment component into this one to maintain the same route /
 
 export interface Build {
   class: string;
@@ -48,6 +48,10 @@ const CreateBuild: FC = ({}) => {
     });
   };
 
+  const toggleClasses = () => {
+    setClassesShown(!classesShown);
+  };
+
   const saveBuild = () => {
     if (buildData.class.length < 3) {
       setErrorMsgs("Make sure you have a class selected!");
@@ -66,9 +70,11 @@ const CreateBuild: FC = ({}) => {
         const newBuilds = [buildData];
         return newBuilds;
       });
+      toggleClasses();
     } else {
       // const oldBuilds = JSON.parse(localStorage.getItem("builds") || "[]");
       setBuilds([...builds, buildData]);
+      toggleClasses();
     }
   };
 
@@ -76,14 +82,11 @@ const CreateBuild: FC = ({}) => {
     if (!classesShown) {
       setClassesShown(true);
       setBuildData({ class: "", link: "", details: "" });
+      setErrorMsgs("");
     }
     if (classesShown) {
       navigate("/");
     }
-  };
-
-  const toggleClasses = () => {
-    setClassesShown(!classesShown);
   };
 
   const handleClass = (e: any) => {

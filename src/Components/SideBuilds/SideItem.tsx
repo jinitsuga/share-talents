@@ -37,7 +37,7 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
       className={` relative flex flex-row bg-${background} p-4 rounded mb-2 `}
     >
       <div className={`w-60 flex flex-col rounded bg-${background}  `}>
-        <h4 className="text-sm w-32">{build.class} build</h4>
+        <h4 className="text-sm">{build.class} build</h4>
         <span className="text-xs w-32">qweeEEEEEEEEEEEERRRR444123yyu</span>
         <span
           onMouseEnter={handleEnter}
