@@ -30,8 +30,11 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
 
   const deleteBuild = () => {
     console.log(id);
-    const thisBuild = builds.filter((build) => build.link !== id);
-    console.log(thisBuild);
+    const newBuilds = builds.filter((build) => build.link !== id);
+    if (newBuilds.length < 1) {
+      localStorage.clear();
+    }
+    setBuilds(newBuilds);
   };
 
   return (
