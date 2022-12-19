@@ -34,7 +34,7 @@ const CreateBuild: FC = ({}) => {
 
   // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
 
-  console.log(builds);
+  // console.log(builds);
 
   builds.length ? localStorage.setItem("builds", JSON.stringify(builds)) : "";
 
