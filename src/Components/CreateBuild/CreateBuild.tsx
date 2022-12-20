@@ -9,6 +9,7 @@ import { SideBuilds } from "../SideBuilds/SideBuilds";
 export interface Build {
   class: string;
   link: string;
+  name: string;
   details: string;
 }
 
@@ -17,6 +18,7 @@ const CreateBuild: FC = ({}) => {
     class: "",
     link: "",
     details: "",
+    name: "",
   });
 
   React.useEffect(() => {
@@ -34,7 +36,7 @@ const CreateBuild: FC = ({}) => {
 
   // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
 
-  // console.log(builds);
+  console.log(buildData);
 
   builds.length ? localStorage.setItem("builds", JSON.stringify(builds)) : "";
 
@@ -81,7 +83,7 @@ const CreateBuild: FC = ({}) => {
   const handleBack = () => {
     if (!classesShown) {
       setClassesShown(true);
-      setBuildData({ class: "", link: "", details: "" });
+      setBuildData({ class: "", link: "", name: "", details: "" });
       setErrorMsgs("");
     }
     if (classesShown) {
@@ -139,6 +141,7 @@ const CreateBuild: FC = ({}) => {
           shown={classesShown}
           inputHandler={handleInput}
           linkValue={buildData.link}
+          nameValue={buildData.name}
           detailsValue={buildData.details}
           error={errorMsgs}
         />

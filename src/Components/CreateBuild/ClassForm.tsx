@@ -5,6 +5,7 @@ interface Props {
   shown: boolean;
   inputHandler: Function;
   linkValue: string;
+  nameValue: string;
   detailsValue: string;
   error: string;
   saveBuild: Function;
@@ -16,6 +17,7 @@ const ClassForm: FC<Props> = ({
   shown,
   inputHandler,
   linkValue,
+  nameValue,
   detailsValue,
   error,
   saveBuild,
@@ -53,6 +55,21 @@ const ClassForm: FC<Props> = ({
         >
           {error}
         </span>
+      </label>
+      <label
+        htmlFor="build-name"
+        className="m-2 flex flex-col items-center justify-center w-80 text-teal-100"
+      >
+        Build name (optional)
+        <input
+          name="name"
+          onChange={(e) => {
+            inputHandler(e);
+          }}
+          value={nameValue}
+          placeholder="Name your build"
+          className="m-4 rounded focus:outline-none focus:ring focus:ring-slate-900 p-2 text-base text-slate-900"
+        ></input>
       </label>
       <label
         htmlFor="build-details"
