@@ -30,7 +30,8 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
       className={`${
         builds.length ? "flex" : "hidden"
       } absolute max-md:relative max-md:top-0 max-md:self-center max-md:justify-self-center
-       top-20 flex-col items-center justify-center p-1 bg-slate-900 rounded pt-5 w-phoneSize m-5 mt-36 mb-10 mr-10 h-auto `}
+       top-20 flex-col items-center justify-center p-1 bg-slate-900 rounded pt-5 w-phoneSize m-5 mt-36 mb-10 mr-10 h-auto 
+       max-md:mt-12 max-md:mr-0 max-md:m-0 max-md:w-auto`}
     >
       <h3 className="text-2xl text-teal-100 mb-2">
         Current builds in this set
