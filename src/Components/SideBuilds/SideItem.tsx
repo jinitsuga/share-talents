@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Build } from "../CreateBuild/CreateBuild";
 import Tooltip from "../Tooltip/Tooltip";
+import { copyText } from "../../clipboard";
 
 interface Props {
   build: Build;
@@ -47,7 +48,7 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
         <h4 className="text-sm">
           {build.name ? build.name : `${build.class} build`}
         </h4>
-        <span className="text-xs w-32">qweeEEEEEEEEEEEERRRR444123yyu</span>
+        <span className="text-xs w-32">{build.link}</span>
         <span
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
@@ -67,6 +68,9 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
           X
         </div>
         <button
+          onClick={() => {
+            copyText(build.link);
+          }}
           className="w-10 h-8 text-xs text-slate-900 bg-teal-100 rounded text-center mt-2 hover:bg-slate-900
        border-slate-900 border-2 hover:text-teal-100 active:bg-cyan-600"
         >

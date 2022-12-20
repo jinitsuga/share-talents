@@ -63,6 +63,7 @@ const ClassForm: FC<Props> = ({
         Build name (optional)
         <input
           name="name"
+          maxLength={24}
           onChange={(e) => {
             inputHandler(e);
           }}
@@ -75,7 +76,7 @@ const ClassForm: FC<Props> = ({
         htmlFor="build-details"
         className="m-2 flex flex-col items-center justify-center w-80 text-teal-100"
       >
-        Build details (optional)
+        Details/comments (optional)
         <textarea
           value={detailsValue}
           name="details"
