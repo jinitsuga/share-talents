@@ -3,10 +3,11 @@ import { FC } from "react";
 interface Props {
   text: string;
   shown: boolean;
-  build?: string;
+  build?: string | null;
+  mobile?: string | null;
 }
 
-const Tooltip: FC<Props> = ({ text, shown, build }) => {
+const Tooltip: FC<Props> = ({ text, shown, build, mobile }) => {
   return (
     <div
       className={
@@ -16,7 +17,11 @@ const Tooltip: FC<Props> = ({ text, shown, build }) => {
               build
                 ? "absolute left-80 bg-teal-100 rounded text-slate-900 border border-slate-900 border-2 z-10 text-md"
                 : ""
-            }`
+            } ${
+              mobile
+                ? "absolute left-20 top-12 bg-teal-100 rounded text-slate-900 border border-slate-900 border-2 z-10 text-md"
+                : ""
+            } `
       }
     >
       <p>{text}</p>

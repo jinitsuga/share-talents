@@ -78,7 +78,8 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
         </button>
       </div>
       <Tooltip
-        build="yes"
+        build={innerWidth <= 768 ? null : "yes"}
+        mobile={innerWidth >= 768 ? null : "mobile"}
         text="some random details about the build"
         shown={detailsShown}
       />
