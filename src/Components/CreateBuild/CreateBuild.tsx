@@ -4,7 +4,6 @@ import { Class } from "./Class";
 import { ClassForm } from "./ClassForm";
 import { useNavigate } from "react-router-dom";
 import { SideBuilds } from "../SideBuilds/SideBuilds";
-// Bake input + comment component into this one to maintain the same route /
 
 export interface Build {
   class: string;
@@ -35,8 +34,6 @@ const CreateBuild: FC = ({}) => {
   const [errorMsgs, setErrorMsgs] = React.useState("");
 
   // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
-
-  console.log(buildData);
 
   builds.length ? localStorage.setItem("builds", JSON.stringify(builds)) : "";
 
