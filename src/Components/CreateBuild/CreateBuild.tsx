@@ -124,11 +124,11 @@ const CreateBuild: FC = ({}) => {
             classesShown ? "flex" : "hidden"
           }  flex-col items-center justify-center mt-20 w-auto `}
         >
-          <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded">
+          <h3 className="bg-slate-900 text-teal-100 text-3xl mb-8 p-5 rounded max-xl:-mr-96 max-md:mr-0 ">
             Select a class
           </h3>
           <div className="flex flex-row">
-            <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-80 max-xl:w-classContainerSmall pb-4">
+            <div className="flex flex-row flex-wrap items-center justify-center w-classContainer h-80 max-xl:w-classContainerSmall max-md:mr-0  max-xl:-mr-96 pb-4">
               {classBlocks}
             </div>
           </div>
