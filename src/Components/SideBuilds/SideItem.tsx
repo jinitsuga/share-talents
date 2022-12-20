@@ -39,10 +39,14 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
 
   return (
     <div
-      className={` relative flex flex-row bg-${background} p-4 rounded  mb-2 border-4 border-${background} `}
+      className={` relative flex flex-row bg-${background} p-4 rounded-md  mb-2 border-4 border-slate-900 hover:border-teal-100 `}
     >
-      <div className={`w-60 flex flex-col rounded bg-${background} `}>
-        <h4 className="text-sm">{build.class} build</h4>
+      <div
+        className={`w-60 flex flex-col rounded bg-${background} text-md space-y-0.5`}
+      >
+        <h4 className="text-sm">
+          {build.name ? build.name : `${build.class} build`}
+        </h4>
         <span className="text-xs w-32">qweeEEEEEEEEEEEERRRR444123yyu</span>
         <span
           onMouseEnter={handleEnter}
@@ -52,7 +56,7 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
           + details
         </span>
       </div>
-      <div className=" flex flex-col space-y-5 justify-center items-center">
+      <div className="flex flex-col space-y-5 justify-center items-center">
         <div
           onClick={() => {
             deleteBuild();

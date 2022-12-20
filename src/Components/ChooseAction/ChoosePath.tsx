@@ -12,7 +12,7 @@ const ChoosePath: FC = () => {
           navigate("/create-build");
         }}
         text="Create talents set"
-        tooltip="Make a new set of talents from scratch"
+        tooltip="Make a new set of talent builds"
       ></Option>
       <Option
         onClick={() => {
