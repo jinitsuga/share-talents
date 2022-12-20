@@ -27,7 +27,7 @@ const ClassForm: FC<Props> = ({
     <form
       className={`${
         shown ? "hidden" : "flex"
-      }  flex-col items-center justify-center m-10`}
+      }  flex-col items-center justify-center m-10 max-md:mr-0  max-xl:-mr-96`}
     >
       <h3 className="text-teal-100 bg-slate-900 p-4 text-2xl m-4">
         Creating a {character} build.
