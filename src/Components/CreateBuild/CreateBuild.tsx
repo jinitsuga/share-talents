@@ -33,8 +33,6 @@ const CreateBuild: FC = ({}) => {
 
   const [errorMsgs, setErrorMsgs] = React.useState("");
 
-  // console.log(JSON.parse(localStorage.getItem("builds") || "[]"));
-
   builds.length ? localStorage.setItem("builds", JSON.stringify(builds)) : "";
 
   const navigate = useNavigate();
@@ -147,5 +145,5 @@ const CreateBuild: FC = ({}) => {
     </div>
   );
 };
-// bru
+
 export { CreateBuild };

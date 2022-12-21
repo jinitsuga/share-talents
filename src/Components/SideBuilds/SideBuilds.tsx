@@ -20,9 +20,10 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
     );
   });
 
-  const saveBuilds = (builds: Array<Build>) => {
+  const saveBuilds = async (builds: Array<Build>) => {
     localStorage.clear();
-    return console.log(builds);
+    setBuilds([]);
+    // return console.log(builds);
   };
 
   return (
