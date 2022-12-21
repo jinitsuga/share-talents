@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Build } from "../CreateBuild/CreateBuild";
 import { SideItem } from "./SideItem";
 import { SaveBuilds } from "../Modals/SaveBuilds";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   builds: Array<Build>;
@@ -24,8 +25,10 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
   });
 
   const saveBuilds = async (builds: Array<Build>) => {
-    localStorage.clear();
-    setBuilds([]);
+    const uniqid = uuidv4();
+    console.log(builds, uniqid);
+    // localStorage.clear();
+    // setBuilds([]);
     // return console.log(builds);
   };
 
@@ -49,11 +52,11 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
       >
         Save set of builds
       </button>
-      <SaveBuilds
-        setShownModal={setShownModal}
-        shown={shownModal}
-        saveBuilds={saveBuilds}
-      />
+      {shownModal ? (
+        <SaveBuilds setShownModal={setShownModal} saveBuilds={saveBuilds} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

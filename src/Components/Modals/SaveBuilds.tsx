@@ -5,11 +5,11 @@ import React, { FC } from "react";
 
 interface Props {
   saveBuilds: Function;
-  shown: boolean;
+  // shown: boolean;
   setShownModal: Function;
 }
 
-const SaveBuilds: FC<Props> = ({ shown, saveBuilds, setShownModal }) => {
+const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal }) => {
   const [linkShown, setLinkShown] = React.useState(false);
   const modalRef = React.useRef(null);
 
@@ -20,29 +20,35 @@ const SaveBuilds: FC<Props> = ({ shown, saveBuilds, setShownModal }) => {
         setShownModal(false);
       }
     };
+
     document.addEventListener("click", checkForClickOutside, true);
+
+    return () => {
+      console.log("unmounted");
+      document.removeEventListener("click", checkForClickOutside);
+    };
   }, []);
 
   return (
     <div
-      className={`${
-        shown ? "flex" : "hidden"
-      } fixed inset-0 bg-modalBg items-center justify-center`}
+      className={`flex fixed inset-0 bg-modalBg items-center justify-center`}
     >
       <div
         ref={modalRef}
         className="flex flex-col items-center justify-center
-      bg-teal-100 text-slate-900 h-80 w-80 rounded p-10"
+      bg-teal-100 text-slate-900 h-80 w-80 rounded p-10 border-slate-900"
       >
         <h4 className="mb-8 text-xl text-center">
-          A unique link will be generated for you to access this set of builds
+          A unique link will be generated. Use it to access this set of builds
           whenever you want.
         </h4>
         <button
-          className="bg-slate-900 text-teal-100 p-4 rounded text-lg"
+          className="bg-slate-900 text-teal-100 p-4 rounded text-lg
+          hover:bg-teal-100 hover:text-slate-900 hover:border-slate-900 hover:border-2 active:bg-cyan-600"
           onClick={() => {
-            saveBuilds();
+            // saveBuilds();
             setLinkShown(true);
+            // setShownModal(false);
           }}
         >
           Save set of builds
