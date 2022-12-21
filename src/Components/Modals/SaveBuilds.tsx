@@ -5,11 +5,12 @@ import React, { FC } from "react";
 
 interface Props {
   saveBuilds: Function;
+  setLink: string;
   // shown: boolean;
   setShownModal: Function;
 }
 
-const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal }) => {
+const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
   const [linkShown, setLinkShown] = React.useState(false);
   const modalRef = React.useRef(null);
 
@@ -46,13 +47,14 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal }) => {
           className="bg-slate-900 text-teal-100 p-4 rounded text-lg
           hover:bg-teal-100 hover:text-slate-900 hover:border-slate-900 hover:border-2 active:bg-cyan-600"
           onClick={() => {
-            // saveBuilds();
+            saveBuilds();
             setLinkShown(true);
             // setShownModal(false);
           }}
         >
           Save set of builds
         </button>
+        <span className={`${linkShown ? "block" : "hidden"}`}></span>
       </div>
     </div>
   );
