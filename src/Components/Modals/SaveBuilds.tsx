@@ -11,14 +11,15 @@ interface Props {
 }
 
 const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
-  const [linkShown, setLinkShown] = React.useState(false);
+  const [linkShown, setLinkShown] = React.useState<boolean>(false);
   const modalRef = React.useRef(null);
-
+  console.log(linkShown);
   React.useEffect(() => {
     const checkForClickOutside = (e: any) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
         console.log("click trigger");
         setShownModal(false);
+        setLinkShown(false);
       }
     };
 
@@ -37,15 +38,18 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
       <div
         ref={modalRef}
         className="flex flex-col items-center justify-center
-      bg-teal-100 text-slate-900 h-80 w-80 rounded p-10 border-slate-900"
+      bg-teal-100 text-slate-900 h- w-96 rounded p-10 border-slate-900"
       >
         <h4 className="mb-8 text-xl text-center">
           A unique link will be generated. Use it to access this set of builds
           whenever you want.
         </h4>
         <button
-          className="bg-slate-900 text-teal-100 p-4 rounded text-lg
-          hover:bg-teal-100 hover:text-slate-900 hover:border-slate-900 hover:border-2 active:bg-cyan-600"
+          className={`${
+            linkShown ? "hidden" : "block"
+          } hover:bg-teal-100 hover:text-slate-900 hover:border-slate-900 hover:border-2 bg-slate-900 text-teal-100 p-4 rounded text-lg
+          active:bg-cyan-600
+         }`}
           onClick={() => {
             saveBuilds();
             setLinkShown(true);
@@ -54,7 +58,13 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
         >
           Save set of builds
         </button>
-        <span className={`${linkShown ? "block" : "hidden"}`}></span>
+        <span
+          className={`${
+            linkShown ? "block" : "hidden"
+          }  bg-slate-900 text-teal-100 p-6 rounded border text-center`}
+        >
+          share-talents.com/builds/{setLink}
+        </span>
       </div>
     </div>
   );

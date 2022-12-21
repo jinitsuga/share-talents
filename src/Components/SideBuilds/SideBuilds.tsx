@@ -13,7 +13,6 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
   const [shownModal, setShownModal] = React.useState<boolean>(false);
   const [setLink, setSetLink] = React.useState<string>("");
 
-  console.log(shownModal);
   const buildsList = builds.map((build, index) => {
     return (
       <SideItem
@@ -28,6 +27,7 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
 
   const saveBuilds = async () => {
     const uniqid = uuidv4();
+    setSetLink(uniqid);
     console.log({ builds: builds, id: uniqid });
     // localStorage.clear();
     // setBuilds([]);
