@@ -19,6 +19,7 @@ module.exports = {
         druid: "#FF7C0A",
         dh: "#A330C9",
         dk: "#C41E3A",
+        modalBg: "rgba(0, 0, 0, 0.8)",
       },
       width: {
         classContainer: "600px",

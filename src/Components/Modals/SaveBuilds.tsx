@@ -8,12 +8,19 @@ interface Props {
   shown: boolean;
 }
 
-const SaveBuild: FC<Props> = ({ shown, saveBuilds }) => {
+const SaveBuilds: FC<Props> = ({ shown, saveBuilds }) => {
   const [linkShown, setLinkShown] = React.useState(false);
 
   return (
-    <div className={`${shown ? "flex" : "hidden"} fixed inset-0`}>
-      <div>
+    <div
+      className={`${
+        shown ? "flex" : "hidden"
+      } fixed inset-0 bg-modalBg items-center justify-center`}
+    >
+      <div
+        className="flex flex-col items-center justify-center
+      bg-teal-200 text-slate-900 h-80 w-80 rounded p-4"
+      >
         <h4>
           Your builds will be saved, and a unique link will be generated for you
           to access this set of buils whenever you want.
@@ -31,4 +38,4 @@ const SaveBuild: FC<Props> = ({ shown, saveBuilds }) => {
   );
 };
 
-export { SaveBuild };
+export { SaveBuilds };

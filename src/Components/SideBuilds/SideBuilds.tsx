@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Build } from "../CreateBuild/CreateBuild";
 import { SideItem } from "./SideItem";
+import { SaveBuilds } from "../Modals/SaveBuilds";
 
 interface Props {
   builds: Array<Build>;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
+  const [shownModal, setShownModal] = React.useState(false);
+
   const buildsList = builds.map((build, index) => {
     return (
       <SideItem
@@ -40,13 +43,13 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
       <div>{buildsList} </div>
       <button
         onClick={() => {
-          saveBuilds(builds);
-          setBuilds([]);
+          setShownModal(true);
         }}
         className="bg-teal-100 text-slate-900 p-3 m-2 rounded hover:bg-slate-900 hover:text-teal-100 hover:border"
       >
         Save set of builds
       </button>
+      <SaveBuilds shown={shownModal} saveBuilds={saveBuilds} />
     </div>
   );
 };
