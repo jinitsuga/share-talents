@@ -10,7 +10,7 @@ interface Props {
 
 export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
   const [shownModal, setShownModal] = React.useState(false);
-
+  console.log(shownModal);
   const buildsList = builds.map((build, index) => {
     return (
       <SideItem
@@ -49,7 +49,11 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
       >
         Save set of builds
       </button>
-      <SaveBuilds shown={shownModal} saveBuilds={saveBuilds} />
+      <SaveBuilds
+        setShownModal={setShownModal}
+        shown={shownModal}
+        saveBuilds={saveBuilds}
+      />
     </div>
   );
 };

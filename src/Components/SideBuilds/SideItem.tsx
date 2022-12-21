@@ -40,7 +40,7 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
 
   return (
     <div
-      className={` relative flex flex-row bg-${background} p-4 rounded-md  mb-2 border-4 border-slate-900 hover:border-teal-100 `}
+      className={` relative flex flex-row bg-${background} p-2 rounded-md  mb-1 border-4 border-slate-900 hover:border-teal-100 `}
     >
       <div
         className={`w-60 flex flex-col rounded bg-${background} text-md space-y-0.5`}
