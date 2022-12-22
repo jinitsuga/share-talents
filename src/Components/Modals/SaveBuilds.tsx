@@ -58,13 +58,19 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
         >
           Save set of builds
         </button>
-        <span
+        <div
           className={`${
-            linkShown ? "block" : "hidden"
-          }  bg-slate-900 text-teal-100 p-6 rounded border text-center`}
+            linkShown ? "flex" : "hidden"
+          } flex-col items-center justify-center  bg-slate-900 text-teal-100 p-6 rounded border text-center `}
         >
-          share-talents.com/builds/{setLink}
-        </span>
+          <button
+            className="w-20 h-16 text-lg text-slate-900 bg-teal-100 text-center rounded mb-1 p-4 hover:bg-slate-500
+       border-slate-900  hover:text-teal-100 active:bg-cyan-600"
+          >
+            copy
+          </button>
+          <span>share-talents.com/builds/{setLink}</span>
+        </div>
       </div>
     </div>
   );
