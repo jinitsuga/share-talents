@@ -20,7 +20,8 @@ Feel free to drop suggestions or ideas to add to this project if you have some :
 #### Update and thoughts:
 
 TS:
--Loving most of Typescript so far, despite slowing down the whole building process, mostly because it's my first time doing a project with it, but I can see how helpful it is to give the wild landscape of JavaScript some structure. I think it also makes code better and more accessible to read by other people, since it can be much easier to recognize what a declaration is when you see its type, or when you're reading a components' props with their types, you can already tell the purpose of each prop.
+
+- Loving most of Typescript so far, despite slowing down the whole building process, mostly because it's my first time doing a project with it, but I can see how helpful it is to give the wild landscape of JavaScript some structure. I think it also makes code better and more accessible to read by other people, since it can be much easier to recognize what a declaration is when you see its type, or when you're reading a components' props with their types, you can already tell the purpose of each prop.
 
 Tailwind:
 
@@ -29,4 +30,4 @@ Tailwind:
 
 Vite:
 
-- I'm no bundler expert, but I'm impressed at how fast Vite generally is, and how easy it was to set up a project using Typescript from the start. They also have descriptive documentation that was quite easy to navigate.
+- I'm no bundler expert, but I'm impressed at how fast Vite generally is, and how easy it was to set up a project using Typescript from the start. They also have descriptive documentation that was quite easy to navigate. The built in support for environment variables for both development and production has been really nice.
