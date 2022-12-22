@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { copyText } from "../../clipboard";
 
 // Write an app explanation in landing component
 // Generate a unique link. - Check out React Query for fetching to firebase
@@ -12,13 +13,18 @@ interface Props {
 
 const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
   const [linkShown, setLinkShown] = React.useState<boolean>(false);
+
   const modalRef = React.useRef(null);
+
   console.log(linkShown);
+
   React.useEffect(() => {
     const checkForClickOutside = (e: any) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
         console.log("click trigger");
+
         setShownModal(false);
+
         setLinkShown(false);
       }
     };
@@ -64,6 +70,9 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
           } flex-col items-center justify-center  bg-slate-900 text-teal-100 p-6 rounded border text-center `}
         >
           <button
+            onClick={() => {
+              copyText(`share-talents.com/builds/${setLink}`);
+            }}
             className="w-20 h-16 text-lg text-slate-900 bg-teal-100 text-center rounded mb-1 p-4 hover:bg-slate-500
        border-slate-900  hover:text-teal-100 active:bg-cyan-600"
           >
