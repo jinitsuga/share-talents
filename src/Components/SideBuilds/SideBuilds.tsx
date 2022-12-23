@@ -33,11 +33,9 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
 
     const thisLink = `builds/${uniqid}`;
 
-    await postSet(thisLink, builds).then((data) => console.log(data));
-
-    // localStorage.clear();
-    // setBuilds([]);
-    // return console.log(builds);
+    await postSet(thisLink, builds);
+    localStorage.clear();
+    setBuilds([]);
   };
 
   return (

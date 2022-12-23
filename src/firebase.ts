@@ -4,7 +4,16 @@ import { getAnalytics } from "firebase/analytics";
 
 import { firebaseConfig } from "./firebaseConfig";
 
-import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  query,
+  where,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
 
 import { Build } from "./Components/CreateBuild/CreateBuild";
 
@@ -22,6 +31,12 @@ async function postSet(link: string, builds: Array<Build>) {
   const setData = { link: link, builds: builds };
 
   await setDoc(setRef, setData);
+}
+
+async function getSet(link: string) {
+  const q = query(collection(db, "builds"), where("link", "==", link));
+
+  const querySnap = await getDocs(q);
 }
 
 export { postSet };

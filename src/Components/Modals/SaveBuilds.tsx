@@ -57,8 +57,9 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
           active:bg-cyan-600
          }`}
           onClick={() => {
-            saveBuilds();
-            setLinkShown(true);
+            saveBuilds().then(() => {
+              setLinkShown(true);
+            });
             // setShownModal(false);
           }}
         >
