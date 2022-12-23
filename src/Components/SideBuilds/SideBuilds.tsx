@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Build } from "../CreateBuild/CreateBuild";
 import { SideItem } from "./SideItem";
 import { SaveBuilds } from "../Modals/SaveBuilds";
+import { postSet } from "../../firebase";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
@@ -27,8 +28,13 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
 
   const saveBuilds = async () => {
     const uniqid = uuidv4();
+
     setSetLink(uniqid);
-    console.log({ builds: builds, id: uniqid });
+
+    const thisLink = `builds/${uniqid}`;
+
+    await postSet(thisLink, builds).then((data) => console.log(data));
+
     // localStorage.clear();
     // setBuilds([]);
     // return console.log(builds);
