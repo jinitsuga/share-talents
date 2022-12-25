@@ -16,7 +16,7 @@ const ChoosePath: FC = () => {
       ></Option>
       <Option
         onClick={() => {
-          navigate("/create-build");
+          navigate("/import");
         }}
         text="Import a set"
         tooltip="Import an existing set to browse, or edit it into a new one"

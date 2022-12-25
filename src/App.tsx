@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChoosePath } from "./Components/ChooseAction/ChoosePath";
 import { CreateBuild } from "./Components/CreateBuild/CreateBuild";
+import { ImportSet } from "./Components/Import/ImportSet";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: "/create-build",
     element: <CreateBuild />,
+  },
+  {
+    path: "/import",
+    element: <ImportSet />,
   },
 ]);
 

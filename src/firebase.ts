@@ -39,4 +39,4 @@ async function getSet(link: string) {
   const querySnap = await getDocs(q);
 }
 
-export { postSet };
+export { postSet, getSet };
