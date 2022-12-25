@@ -8,9 +8,16 @@ interface Props {
   builds: Array<Build>;
   setBuilds: Function;
   id: string;
+  isEditable?: boolean;
 }
 
-export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
+export const SideItem: FC<Props> = ({
+  build,
+  builds,
+  setBuilds,
+  id,
+  isEditable,
+}) => {
   const [detailsShown, setDetailsShown] = React.useState(false);
 
   // Bg-color corrections (tailwind config file)
@@ -62,8 +69,10 @@ export const SideItem: FC<Props> = ({ build, builds, setBuilds, id }) => {
           onClick={() => {
             deleteBuild();
           }}
-          className="flex justify-center items-center text-center border text-lg text-teal-100 w-6 h-6 -mr-8 -mt-3
-        hover: cursor-pointer bg-slate-900 hover:bg-teal-100 hover:text-slate-900"
+          className={`${
+            isEditable ? "flex" : "hidden"
+          } justify-center items-center text-center border text-lg text-teal-100 w-6 h-6 -mr-8 -mt-3
+        hover: cursor-pointer bg-slate-900 hover:bg-teal-100 hover:text-slate-900`}
         >
           X
         </div>

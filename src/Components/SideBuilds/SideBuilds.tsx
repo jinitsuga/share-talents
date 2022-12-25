@@ -22,6 +22,7 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
         id={build.link}
         build={build}
         key={index}
+        isEditable
       />
     );
   });
