@@ -35,13 +35,18 @@ async function postSet(link: string, builds: Array<Build>) {
 
 async function getSet(link: string) {
   const q = query(collection(db, "sets"), where("link", "==", link));
-  console.log(q);
 
-  const querySnap = await getDocs(q);
+  try {
+    const querySnap = await getDocs(q);
 
-  querySnap.forEach((doc) => {
-    console.log(doc.id, "=>", doc.data());
-  });
+    querySnap.forEach((doc) => {
+      console.log("lol");
+
+      console.log(doc.data());
+    });
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export { postSet, getSet };

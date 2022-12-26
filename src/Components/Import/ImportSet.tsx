@@ -8,7 +8,7 @@ const ImportSet: FC = () => {
 
   // Arbitrary link for test : "builds/ce35e791-d760-4094-856e-8ea3a832d98d"
   const navigate = useNavigate();
-  console.log(setLink);
+
   const handleBack = () => {
     if (!setShown) {
       navigate("/");
@@ -53,8 +53,7 @@ const ImportSet: FC = () => {
         <button
           onClick={(e: any) => {
             e.preventDefault();
-            console.log(setLink);
-            getSet("builds/ce35e791-d760-4094-856e-8ea3a832d98d");
+            getSet(setLink);
           }}
           className="bg-teal-100 text-slate-900 p-2 rounded text-xl border-2 border-teal-100
         hover:bg-slate-900 hover:text-teal-100"
