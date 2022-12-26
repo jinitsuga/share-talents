@@ -3,16 +3,21 @@ import { getSet } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 const ImportSet: FC = () => {
-  const [buildsShown, setBuildsShown] = React.useState(false);
+  const [setShown, setSetShown] = React.useState<boolean>(false);
+  const [setLink, setSetLink] = React.useState<string>("");
 
+  // Arbitrary link for test : "builds/ce35e791-d760-4094-856e-8ea3a832d98d"
   const navigate = useNavigate();
-
+  console.log(setLink);
   const handleBack = () => {
-    if (!buildsShown) {
+    if (!setShown) {
       navigate("/");
     }
   };
 
+  const handleChange = (e: any) => {
+    setSetLink(e.target.value);
+  };
   return (
     <div className=" relative w-screen flex flex-col items-center">
       <div
@@ -24,21 +29,38 @@ const ImportSet: FC = () => {
       </div>
       <div
         className={`${
-          buildsShown ? "hidden" : "flex"
+          setShown ? "hidden" : "flex"
         } flex-col items-center justify-center bg-slate-900 text-teal-100
-       w-phoneSize p-4 mt-60 rounded`}
+       w-phoneSize p-4 mt-44 rounded`}
       >
         <form className="flex flex-col items-center justify-center">
-          <h3 className="text-xl mb-4 text-center">
+          <h3 className="text-xl mb-4 text-center p-2">
             Paste the link representing a set of builds
           </h3>
           <label
             className="flex flex-col items-center justify-center"
             htmlFor="set-link"
           >
-            <input className="rounded h-10 text-slate-900"></input>
+            <input
+              onChange={(e) => {
+                handleChange(e);
+              }}
+              className="rounded h-10 text-slate-900 m-4 mb-8 text-base focus:outline-none focus:ring
+              focus:ring-cyan-600 p-2"
+            ></input>
           </label>
         </form>
+        <button
+          onClick={(e: any) => {
+            e.preventDefault();
+            console.log(setLink);
+            getSet("builds/ce35e791-d760-4094-856e-8ea3a832d98d");
+          }}
+          className="bg-teal-100 text-slate-900 p-2 rounded text-xl border-2 border-teal-100
+        hover:bg-slate-900 hover:text-teal-100"
+        >
+          Import set
+        </button>
       </div>
     </div>
   );
