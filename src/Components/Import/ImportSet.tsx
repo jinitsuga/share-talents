@@ -1,10 +1,12 @@
 import React, { FC } from "react";
 import { getSet } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import { Build } from "../CreateBuild/CreateBuild";
 
 const ImportSet: FC = () => {
   const [setShown, setSetShown] = React.useState<boolean>(false);
   const [setLink, setSetLink] = React.useState<string>("");
+  const [imported, setImported] = React.useState<Array<Build>>([]);
 
   // Arbitrary link for test : "builds/ce35e791-d760-4094-856e-8ea3a832d98d"
   const navigate = useNavigate();
@@ -51,9 +53,10 @@ const ImportSet: FC = () => {
           </label>
         </form>
         <button
-          onClick={(e: any) => {
+          onClick={async (e: any) => {
             e.preventDefault();
-            getSet(setLink);
+            const set = await getSet(setLink);
+            console.log(set);
           }}
           className="bg-teal-100 text-slate-900 p-2 rounded text-xl border-2 border-teal-100
         hover:bg-slate-900 hover:text-teal-100"
