@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { getSet } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { Build } from "../CreateBuild/CreateBuild";
+import { ImportedBuilds } from "./ImportedBuilds";
 
 const ImportSet: FC = () => {
   const [setShown, setSetShown] = React.useState<boolean>(false);
@@ -14,6 +15,9 @@ const ImportSet: FC = () => {
   const handleBack = () => {
     if (!setShown) {
       navigate("/");
+    }
+    if (setShown) {
+      setSetShown(false);
     }
   };
 
@@ -64,6 +68,13 @@ const ImportSet: FC = () => {
         >
           Import set
         </button>
+      </div>
+      <div>
+        {setShown ? (
+          <ImportedBuilds importedBuilds={imported} setImported={setImported} />
+        ) : (
+          ""
+        )}{" "}
       </div>
     </div>
   );
