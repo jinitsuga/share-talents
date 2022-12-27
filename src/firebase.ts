@@ -33,7 +33,7 @@ async function postSet(link: string, builds: Array<Build>) {
   await setDoc(setRef, setData);
 }
 
-async function getSet(link: string, fn: Function) {
+async function getSet(link: string, fn: Function, setShown: Function) {
   const q = query(collection(db, "sets"), where("link", "==", link));
 
   let result: any = "";
@@ -49,6 +49,7 @@ async function getSet(link: string, fn: Function) {
     console.log("error");
   } else {
     fn(result.builds);
+    setShown(true);
     return result;
   }
 }

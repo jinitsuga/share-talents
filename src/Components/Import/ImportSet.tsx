@@ -47,7 +47,8 @@ const ImportSet: FC = () => {
               onChange={(e) => {
                 handleChange(e);
               }}
-              className="rounded h-10 text-slate-900 m-4 mb-8 text-base focus:outline-none focus:ring
+              placeholder="Link to a set of builds"
+              className="placeholder-gray-500 rounded h-10 text-slate-900 m-4 mb-8 text-base focus:outline-none focus:ring
               focus:ring-cyan-600 p-2"
             ></input>
           </label>
@@ -55,7 +56,7 @@ const ImportSet: FC = () => {
         <button
           onClick={async (e: any) => {
             e.preventDefault();
-            const set = await getSet(setLink, setImported);
+            const set = await getSet(setLink, setImported, setSetShown);
             console.log(set);
           }}
           className="bg-teal-100 text-slate-900 p-2 rounded text-xl border-2 border-teal-100
