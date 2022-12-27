@@ -41,9 +41,8 @@ async function getSet(link: string) {
   const querySnap = await getDocs(q);
 
   querySnap.forEach((doc) => {
-    console.log("lol");
-
     console.log(doc.data());
+
     result = doc.data();
   });
   if (result == "") {
