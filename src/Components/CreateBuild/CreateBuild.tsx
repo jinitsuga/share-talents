@@ -12,7 +12,11 @@ export interface Build {
   details: string;
 }
 
-const CreateBuild: FC = ({}) => {
+interface Props {
+  importedBuilds?: Array<Build>;
+}
+
+const CreateBuild: FC<Props> = ({ importedBuilds }) => {
   const [buildData, setBuildData] = React.useState<Build>({
     class: "",
     link: "",
@@ -21,7 +25,9 @@ const CreateBuild: FC = ({}) => {
   });
 
   React.useEffect(() => {
-    if (localStorage.getItem("builds")) {
+    if (importedBuilds) {
+      setBuilds(importedBuilds);
+    } else if (localStorage.getItem("builds")) {
       setBuilds(JSON.parse(localStorage.getItem("builds") || "[]"));
       console.log("builds set");
     }

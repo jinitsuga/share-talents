@@ -10,7 +10,7 @@ const ImportSet: FC = () => {
 
   // Arbitrary link for test : "builds/ce35e791-d760-4094-856e-8ea3a832d98d"
   const navigate = useNavigate();
-
+  console.log(imported);
   const handleBack = () => {
     if (!setShown) {
       navigate("/");
@@ -55,7 +55,7 @@ const ImportSet: FC = () => {
         <button
           onClick={async (e: any) => {
             e.preventDefault();
-            const set = await getSet(setLink);
+            const set = await getSet(setLink, setImported);
             console.log(set);
           }}
           className="bg-teal-100 text-slate-900 p-2 rounded text-xl border-2 border-teal-100
