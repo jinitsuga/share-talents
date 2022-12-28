@@ -53,5 +53,10 @@ async function getSet(link: string, fn: Function, setShown: Function) {
     return result;
   }
 }
+async function getTest(link: string) {
+  const q = query(collection(db, "sets"), where("link", "==", link));
 
-export { postSet, getSet };
+  return await getDocs(q);
+}
+
+export { postSet, getSet, getTest };

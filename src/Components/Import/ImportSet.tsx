@@ -3,15 +3,16 @@ import { getSet } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { Build } from "../CreateBuild/CreateBuild";
 import { ImportedBuilds } from "./ImportedBuilds";
+import { useQuery } from "react-query";
 
 const ImportSet: FC = () => {
   const [setShown, setSetShown] = React.useState<boolean>(false);
   const [setLink, setSetLink] = React.useState<string>("");
   const [imported, setImported] = React.useState<Array<Build>>([]);
 
-  // Arbitrary link for test : "builds/ce35e791-d760-4094-856e-8ea3a832d98d"
+  // Arbitrary link for test : "builds/c5863de9-89a2-4c30-8895-db7032cbe4e8"
   const navigate = useNavigate();
-  console.log(imported);
+
   const handleBack = () => {
     if (!setShown) {
       navigate("/");

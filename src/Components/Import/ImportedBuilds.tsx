@@ -15,6 +15,7 @@ const ImportedBuilds: FC<Props> = ({ importedBuilds, setImported }) => {
         id={build.link}
         builds={importedBuilds}
         setBuilds={setImported}
+        key={index}
       />
     );
   });
