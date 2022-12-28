@@ -53,10 +53,13 @@ async function getSet(link: string, fn: Function, setShown: Function) {
     return result;
   }
 }
-async function getTest(link: string) {
+async function getTest(link: any) {
   const q = query(collection(db, "sets"), where("link", "==", link));
 
-  return await getDocs(q);
+  let result = "";
+
+  const snapShot = (await getDocs(q)) as any;
+  return snapShot;
 }
 
-export { postSet, getSet, getTest };
+export { postSet, getSet, getTest, db };
