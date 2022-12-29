@@ -69,12 +69,14 @@ const ImportTest: FC<Props> = ({ link }) => {
         </h4>
         <div>{builds}</div> :
       </div>
+
+      {/*  Enable the edition of this set, rendering CreateBuild.tsx with 'importedBuilds as prop' */}
       <span
         className={`${
           builds.length ? "hidden" : "block"
         } text-teal-100 bg-slate-900 rounded p-6 text-2xl mt-20`}
       >
-        Make sure you're using the correct link. No builds here!
+        Make sure you're using the correct link. No builds found here!
       </span>
     </div>
   );
