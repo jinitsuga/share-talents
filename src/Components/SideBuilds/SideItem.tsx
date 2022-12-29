@@ -6,7 +6,7 @@ import { copyText } from "../../clipboard";
 interface Props {
   build: Build;
   builds: Array<Build>;
-  setBuilds: Function;
+  setBuilds: any;
   id: string;
   isEditable?: boolean;
 }
