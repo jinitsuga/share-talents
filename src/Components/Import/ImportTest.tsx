@@ -19,12 +19,19 @@ function getTest(link: any) {
 }
 
 const ImportTest: FC<Props> = ({ link }) => {
-  const { isLoading, data } = getTest(link);
+  const { isLoading, data, isError, error } = getTest(link);
 
   let importedBuilds: Array<Build> = [];
 
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return (
+      <h2 className="bg-slate-900 text-teal-100 p-4 text-xl text-center mt-10">
+        Loading...
+      </h2>
+    );
+  }
+  if (isError) {
+    console.log(error);
   }
 
   data
@@ -50,14 +57,25 @@ const ImportTest: FC<Props> = ({ link }) => {
     : "";
 
   return (
-    <div
-      className="flex flex-col items-center justify-center bg-slate-800 p-4
-    mt-20 rounded"
-    >
-      <h4 className="text-center text-lg text-teal-100 mb-2">
-        Builds in this set:
-      </h4>
-      <div>{builds}</div>
+    <div>
+      <div
+        className={`${
+          builds.length ? "flex" : "hidden"
+        } flex-col items-center justify-center bg-slate-800 p-4
+    mt-20 rounded`}
+      >
+        <h4 className="text-center text-lg text-teal-100 mb-2">
+          Builds in this set:
+        </h4>
+        <div>{builds}</div> :
+      </div>
+      <span
+        className={`${
+          builds.length ? "hidden" : "block"
+        } text-teal-100 bg-slate-900 rounded p-6 text-2xl mt-20`}
+      >
+        Make sure you're using the correct link. No builds here!
+      </span>
     </div>
   );
 };
