@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useLoaderData } from "react-router-dom";
 import { useQuery } from "react-query";
 import { db } from "../../firebase";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
@@ -9,7 +10,7 @@ import { Build } from "../CreateBuild/CreateBuild";
 interface Props {
   link: string;
 }
-
+// random
 function getTest(link: any) {
   const ref = query(collection(db, "sets"), where("link", "==", link));
 
@@ -18,8 +19,10 @@ function getTest(link: any) {
   return queryBuilds;
 }
 
-const ImportTest: FC<Props> = ({ link }) => {
-  const { isLoading, data, isError, error } = getTest(link);
+const ImportTest: FC = () => {
+  const result: any = useLoaderData();
+
+  const { isLoading, data, error, isError } = getTest(result);
 
   let importedBuilds: Array<Build> = [];
 

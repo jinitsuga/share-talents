@@ -5,8 +5,19 @@ import { ImportSet } from "./Components/Import/ImportSet";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ImportTest } from "./Components/Import/ImportTest";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { getSet, db } from "./firebase";
+import { useFirestoreQuery } from "@react-query-firebase/firestore";
+import { collection, query, where } from "firebase/firestore";
+
 import "./App.css";
 
+function getTest(link: any) {
+  const ref = query(collection(db, "sets"), where("link", "==", link));
+
+  const queryBuilds = useFirestoreQuery("get-builds", ref);
+
+  return queryBuilds;
+}
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -20,8 +31,11 @@ const router = createBrowserRouter([
     element: <ImportSet />,
   },
   {
-    path: "/test",
-    element: <ImportTest link="builds/c5863de9-89a2-4c30-8895-db7032cbe4e81" />,
+    path: "/imported/:build",
+    loader: async ({ params }) => {
+      return params.build;
+    },
+    element: <ImportTest />,
   },
 ]);
 

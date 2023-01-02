@@ -10,7 +10,7 @@ const ImportSet: FC = () => {
   const [setLink, setSetLink] = React.useState<string>("");
   const [imported, setImported] = React.useState<Array<Build>>([]);
 
-  // Arbitrary link for test : "builds/c5863de9-89a2-4c30-8895-db7032cbe4e8"
+  // Arbitrary link for test : "builds-c5863de9-89a2-4c30-8895-db7032cbe4e8"
   const navigate = useNavigate();
 
   const handleBack = () => {
