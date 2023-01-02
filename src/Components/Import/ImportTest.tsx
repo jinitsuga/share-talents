@@ -6,7 +6,7 @@ import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import { collection, query, where } from "firebase/firestore";
 import { SideItem } from "../SideBuilds/SideItem";
 import { Build } from "../CreateBuild/CreateBuild";
-import logo from "../../../public/images/logo.png";
+import logo from "/images/logo.png";
 // import { logo } from "../images/logo.png";
 interface Props {
   link: string;
