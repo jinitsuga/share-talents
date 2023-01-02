@@ -36,7 +36,7 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
 
     await postSet(thisLink, builds);
     localStorage.clear();
-    setBuilds([]);
+    // setBuilds([]);
   };
 
   return (

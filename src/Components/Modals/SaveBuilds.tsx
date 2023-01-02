@@ -68,18 +68,18 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
         <div
           className={`${
             linkShown ? "flex" : "hidden"
-          } flex-col items-center justify-center  bg-slate-900 text-teal-100 p-6 rounded border text-center `}
+          } flex-col items-center justify-center bg-slate-900 text-teal-100 p-6 rounded border text-center`}
         >
           <button
             onClick={() => {
-              copyText(`share-talents.com/imported/builds-${setLink}`);
+              copyText(`localhost:5173/imported/builds-${setLink}`);
             }}
-            className="w-20 h-16 text-lg text-slate-900 bg-teal-100 text-center rounded mb-1 p-4 hover:bg-slate-500
+            className="w-20 h-12 text-md text-slate-900 bg-teal-100 text-center rounded mb-1 p-4 hover:bg-slate-500
        border-slate-900  hover:text-teal-100 active:bg-cyan-600"
           >
             copy
           </button>
-          <span>share-talents.com/imported/builds-{setLink}</span>
+          <span>localhost:5173/imported/builds-{setLink}</span>
         </div>
       </div>
     </div>
