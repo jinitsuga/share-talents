@@ -32,7 +32,7 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
 
     setSetLink(uniqid);
 
-    const thisLink = `builds/${uniqid}`;
+    const thisLink = `builds-${uniqid}`;
 
     await postSet(thisLink, builds);
     localStorage.clear();

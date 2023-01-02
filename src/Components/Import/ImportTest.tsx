@@ -66,7 +66,7 @@ const ImportTest: FC = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <img
-        className="hover:cursor-pointer h-72 w-80"
+        className="hover:cursor-pointer h-80 w-80"
         src={logo}
         alt="talent trees logo"
       ></img>

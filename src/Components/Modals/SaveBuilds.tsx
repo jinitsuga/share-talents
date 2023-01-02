@@ -63,7 +63,7 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
             // setShownModal(false);
           }}
         >
-          Save set of builds
+          Save set!
         </button>
         <div
           className={`${
