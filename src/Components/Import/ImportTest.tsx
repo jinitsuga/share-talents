@@ -22,7 +22,8 @@ function getTest(link: any) {
 
 const ImportTest: FC = () => {
   //Brings data returned in the route's "loader" function
-  const result: any = useLoaderData();
+
+  const result = useLoaderData();
 
   const navigate = useNavigate();
 
@@ -82,7 +83,15 @@ const ImportTest: FC = () => {
         <h4 className="text-center text-lg text-teal-100 mb-2">
           Builds in this set:
         </h4>
-        <div>{builds}</div> :
+        <div>{builds}</div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          className="m-2 p-2 text-slate-900 bg-teal-100 rounded hover:bg-slate-900 hover:text-teal-100 "
+        >
+          Edit this set{" "}
+        </button>
       </div>
 
       {/*  Enable the edition of this set, rendering CreateBuild.tsx with 'importedBuilds as prop' */}
