@@ -19,6 +19,10 @@ Feel free to drop suggestions or ideas to add to this project if you have some :
 
 #### Update and thoughts:
 
+React Query + React Router loaders (no more fetching through useEffect):
+
+- After understanding how it works, React Query sort of blew my mind at how much it simplifies the entire process of making any sort of request, and how much it helps the code and functionality of the app be not only cleaner, but easier to understand, think around, and edit. Combined it with (another first timer) react-router's "loaders" and loaderData hook, to pass data to a route before the route loads its component through its URL params, so the component can make use of this data right away. This made accessing the unique links for each set of builds extremely simple and easy. So far really liking React Query. React-router has also been helpful, but their docs haven't been the most clear to navigate, but nothing that can't be worked around by some testing of our own!
+
 TS:
 
 - Loving most of Typescript so far, despite slowing down the whole building process, mostly because it's my first time doing a project with it, but I can see how helpful it is to give the wild landscape of JavaScript some structure. I think it also makes code better and more accessible to read by other people, since it can be much easier to recognize what a declaration is when you see its type, or when you're reading a components' props with their types, you can already tell the purpose of each prop.
