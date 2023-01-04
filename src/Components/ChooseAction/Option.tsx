@@ -18,12 +18,12 @@ const Option: FC<Props> = ({ text, tooltip, onClick }) => {
   };
 
   return (
-    <div className="h-80 flex flex-col items-center justify-start m-5">
+    <div className="h-80 flex flex-col items-center justify-start m-2">
       <button
         onClick={onClick}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="text-slate-200 bg-slate-900 border mr-4 w-48 h-32 rounded border-transparent text-lg p-1 self-end
+        className="text-slate-200 bg-slate-900 border w-52 h-32 rounded border-transparent text-xl p-2 self-end
          hover:text-teal-100 hover:scale-125 active:bg-slate-300 active:text-slate-900"
       >
         {text}
