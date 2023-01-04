@@ -63,6 +63,7 @@ const ImportTest: FC = () => {
         );
       })
     : "";
+  console.log(importedBuilds);
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -87,8 +88,10 @@ const ImportTest: FC = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
+            localStorage.setItem("builds", JSON.stringify(importedBuilds));
+            navigate("/create-build");
           }}
-          className="m-2 p-2 text-slate-900 bg-teal-100 rounded hover:bg-slate-900 hover:text-teal-100 "
+          className="m-2 p-2 text-lg text-slate-900 bg-teal-100 rounded hover:bg-slate-900 hover:text-teal-100 "
         >
           Edit this set{" "}
         </button>
