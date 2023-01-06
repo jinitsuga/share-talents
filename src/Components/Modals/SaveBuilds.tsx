@@ -70,14 +70,14 @@ const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
         >
           <button
             onClick={() => {
-              copyText(`localhost:5173/imported/builds-${setLink}`);
+              copyText(`share-talents.netlify.app/imported/builds-${setLink}`);
             }}
             className="w-20 h-12 text-md text-slate-900 bg-teal-100 text-center rounded mb-1 p-4 hover:bg-slate-500
        border-slate-900  hover:text-teal-100 active:bg-cyan-600"
           >
             copy
           </button>
-          <span>localhost:5173/imported/builds-{setLink}</span>
+          <span>share-talents.netlify.app/imported/builds-{setLink}</span>
         </div>
       </div>
     </div>
