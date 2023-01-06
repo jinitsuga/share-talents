@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { copyText } from "../../clipboard";
-
+// uniqid
 // Write an app explanation in landing component
 // Generate a unique link. - Check out React Query for fetching to firebase
 
@@ -14,9 +14,7 @@ interface Props {
 const SaveBuilds: FC<Props> = ({ saveBuilds, setShownModal, setLink }) => {
   const [linkShown, setLinkShown] = React.useState<boolean>(false);
 
-  const modalRef = React.useRef(null);
-
-  console.log(linkShown);
+  const modalRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     const checkForClickOutside = (e: any) => {

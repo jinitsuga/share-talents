@@ -7,11 +7,11 @@ import { collection, query, where } from "firebase/firestore";
 import { SideItem } from "../SideBuilds/SideItem";
 import { Build } from "../CreateBuild/CreateBuild";
 import logo from "/images/logo.png";
-// import { logo } from "../images/logo.png";
+
 interface Props {
   link: string;
 }
-// random qwewqeq
+
 function getTest(link: any) {
   const ref = query(collection(db, "sets"), where("link", "==", link));
 
@@ -33,7 +33,7 @@ const ImportTest: FC = () => {
 
   if (isLoading) {
     return (
-      <h2 className="bg-slate-900 text-teal-100 p-4 text-xl text-center mt-10">
+      <h2 className="bg-slate-900 text-teal-100 p-4 text-lg text-center mt-10">
         Loading...
       </h2>
     );

@@ -26,7 +26,7 @@ const ImportSet: FC = () => {
     setSetLink(e.target.value);
   };
   return (
-    <div className=" relative w-screen flex flex-col items-center">
+    <div className="relative w-screen flex flex-col items-center">
       <div
         className="self-start ml-20 mt-10 text-2xl text-teal-100 bg-slate-900 rounded p-2 hover:cursor-pointer
          hover:bg-teal-100 hover:text-slate-900 active:bg-cyan-600"
