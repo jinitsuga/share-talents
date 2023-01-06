@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import { useQuery } from "react-query";
 import { db } from "../../firebase";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import { collection, query, where } from "firebase/firestore";
@@ -12,6 +11,7 @@ interface Props {
   link: string;
 }
 
+// Gets a set of builds from DB, using the loaderData from the URL ("build" param)
 function getTest(link: any) {
   const ref = query(collection(db, "sets"), where("link", "==", link));
 

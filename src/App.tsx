@@ -11,13 +11,6 @@ import { collection, query, where } from "firebase/firestore";
 
 import "./App.css";
 
-function getTest(link: any) {
-  const ref = query(collection(db, "sets"), where("link", "==", link));
-
-  const queryBuilds = useFirestoreQuery("get-builds", ref);
-
-  return queryBuilds;
-}
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -30,6 +23,8 @@ const router = createBrowserRouter([
     path: "/import",
     element: <ImportSet />,
   },
+
+  // Sends the ":build" param to ImportTest component before it loads, so it can use it to get the data.
   {
     path: "/imported/:build",
     loader: async ({ params }) => {
