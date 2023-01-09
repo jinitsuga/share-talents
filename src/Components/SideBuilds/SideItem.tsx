@@ -55,7 +55,7 @@ export const SideItem: FC<Props> = ({
         <h4 className="text-sm">
           {build.name ? build.name : `${build.class} build`}
         </h4>
-        <span className="text-xs w-32">{build.link}</span>
+        <span className="text-xs w-32 box-border truncate">{build.link}</span>
         <span
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
