@@ -55,7 +55,7 @@ export const SideBuilds: FC<Props> = ({ builds, setBuilds }) => {
         onClick={() => {
           setShownModal(true);
         }}
-        className="bg-teal-100 text-slate-900 p-3 m-2 rounded hover:bg-slate-900 hover:text-teal-100 hover:border"
+        className="bg-teal-100 text-slate-900 p-3 m-2 rounded hover:bg-slate-700 hover:text-teal-100"
       >
         Save set of builds
       </button>

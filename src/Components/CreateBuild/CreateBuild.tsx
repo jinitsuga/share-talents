@@ -113,13 +113,16 @@ const CreateBuild: FC<Props> = ({ importedBuilds }) => {
   return (
     <div className="relative">
       <div className={` w-screen flex flex-col justify-center items-center`}>
-        <div
-          onClick={handleBack}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleBack();
+          }}
           className="self-start ml-20 mt-10 text-2xl text-teal-100 bg-slate-900 rounded p-2 hover:cursor-pointer
          hover:bg-teal-100 hover:text-slate-900 active:bg-cyan-600"
         >
           ↩ back
-        </div>
+        </button>
         <div
           className={`${
             classesShown ? "flex" : "hidden"
